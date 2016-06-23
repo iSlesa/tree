@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import argparse
 import termcolor
@@ -33,4 +35,4 @@ if __name__ == "__main__":
         print(path+" is not a directory. Please enter a valid path.")
     else:
         termcolor.cprint(os.path.basename(os.path.normpath(path)), 'blue', attrs=['bold'])
-        listall(path) 
+        listall(path)
