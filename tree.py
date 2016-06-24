@@ -26,13 +26,16 @@ def listall(path,j=0):
                 else:
                     print("│    "*j+'├── '+list_[i])
         os.chdir(path)
-
-if __name__ == "__main__":
+        
+def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", type=str, default=os.getcwd(), help="Path to directory")
+    parser.add_argument("path", type=str, default=os.getcwd(), help="Path to directory")
     path = os.path.abspath(parser.parse_args().path)
     if not os.path.isdir(path):
         print(path+" is not a directory. Please enter a valid path.")
     else:
         termcolor.cprint(os.path.basename(os.path.normpath(path)), 'blue', attrs=['bold'])
         listall(path)
+
+if __name__ == "__main__":
+    main()
